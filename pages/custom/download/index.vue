@@ -51,8 +51,9 @@
 						</view>
 						<view class="cu-capsule radius margin-top">
 							<view class="cu-tag bg-blue">下载地址</view>
-							<view class="cu-tag line-blue">没钱搞</view>
+							<view class="cu-tag line-blue">没💰发布</view>
 						</view>
+						<view class="margin-top">可自行通过HBuilderX的运行->运行到手机或模拟器->运行到ios App基座</view>
 					</view>
 				</view>
 			</view>

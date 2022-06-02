@@ -152,7 +152,7 @@
 							</navigator>
 						</view>
 						<view class="cu-item">
-							<navigator class="funcBtn" url="/pages/custom/download">
+							<navigator class="funcBtn" url="/pages/custom/download/index">
 								<view class="cuIcon-refresharrow text-yellow">
 								</view>
 								<text>下载地址</text>
@@ -214,6 +214,19 @@
 					icon: 'none',
 					title: '当前不支持网页和app，可前往小程序！',
 					duration: 2000
+				});
+			},
+			code() {
+				uni.setClipboardData({
+					data: 'https://gitee.com/zhengcloudtao/uni-app-search',
+					showToast: false,
+					success: function() {
+						uni.showToast({
+							icon: 'none',
+							title: '网页地址已经复制，请自行到浏览器粘贴！',
+							
+						});
+					}
 				});
 			},
 			clean: function() {
