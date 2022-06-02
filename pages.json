@@ -1,0 +1,227 @@
+{
+
+	"pages": [{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/user/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/user/about",
+			"style": {
+				"navigationBarTitleText": "关于我们"
+			}
+
+		},
+		{
+			"path": "pages/user/advise",
+			"style": {
+				"navigationBarTitleText": "用户建议"
+			}
+
+		},
+		{
+			"path": "pages/user/from",
+			"style": {
+				"navigationBarTitleText": "数据来源"
+			}
+
+		},
+		{
+			"path": "pages/user/setting",
+			"style": {
+				"navigationBarTitleText": "用户设置"
+			}
+
+		},
+		{
+			"path": "pages/bind/login/index",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/bind/login/no",
+			"style": {
+				"navigationBarTitleText": "绑定"
+			}
+		},
+		{
+			"path": "pages/bind/loverBind/index",
+			"style": {
+				"navigationBarTitleText": "情侣绑定"
+			}
+		},
+		{
+			"path": "pages/bind/loverBind/no",
+			"style": {
+				"navigationBarTitleText": "情侣绑定"
+			}
+		},
+
+		{
+			"path": "pages/school/timetables/index",
+			"style": {
+				"navigationBarTitleText": "学生课表"
+			}
+
+		},
+		{
+			"path": "pages/school/timetables/custom",
+			"style": {
+				"navigationBarTitleText": "自定义课表"
+			}
+
+		}, {
+			"path": "pages/school/timetables/remarks",
+			"style": {
+				"navigationBarTitleText": "课表备注"
+			}
+
+		}, {
+			"path": "pages/school/timetables/see",
+			"style": {
+				"navigationBarTitleText": "自定义课表总览"
+			}
+
+		},
+		{
+			"path": "pages/school/timetables/setting",
+			"style": {
+				"navigationBarTitleText": "课表设置"
+			}
+
+		},
+		{
+			"path": "pages/school/loverTimetables/setting",
+			"style": {
+				"navigationBarTitleText": "课表设置"
+			}
+		},
+		{
+			"path": "pages/school/loverTimetables/index",
+			"style": {
+				"navigationBarTitleText": "情侣课表"
+			}
+
+		},
+		{
+			"path": "pages/school/loverTimetables/custom",
+			"style": {
+				"navigationBarTitleText": "自定义情侣课表"
+			}
+
+		},
+		{
+			"path": "pages/school/loverTimetables/see",
+			"style": {
+				"navigationBarTitleText": "自定义情侣课表总览"
+			}
+
+		},
+		{
+			"path": "pages/school/volunteers/index",
+			"style": {
+				"navigationBarTitleText": "义工时查询"
+			}
+
+		},
+		{
+			"path": "pages/school/score/index",
+			"style": {
+				"navigationBarTitleText": "成绩查询"
+			}
+
+		},
+		{
+			"path": "pages/school/score/choose",
+			"style": {
+				"navigationBarTitleText": "选修查询"
+			}
+
+		},
+		{
+			"path": "pages/school/score/rank",
+			"style": {
+				"navigationBarTitleText": "总评成绩"
+			}
+
+		},
+		{
+			"path": "pages/school/score/education",
+			"style": {
+				"navigationBarTitleText": "综测成绩"
+			}
+
+		}, {
+			"path": "pages/custom/bus/index",
+			"style": {
+				"navigationBarTitleText": "校园巴士"
+			}
+
+		},
+		{
+			"path": "pages/custom/virus/index",
+			"style": {
+				"navigationBarTitleText": "核酸地点"
+			}
+
+		},
+		{
+			"path": "pages/custom/download",
+			"style": {
+				"navigationBarTitleText": "下载地址"
+			}
+
+		}
+	],
+	"permission": {
+		"scope.userLocation": {
+			"desc": "你的位置信息将用于小程序位置接口"
+		}
+	},
+	"window": {
+		"navigationBarBackgroundColor": "#ffffff",
+		"navigationBarTextStyle": "#000000",
+		"backgroundColor": "#ffffff",
+		"backgroundTextStyle": "#000000",
+		"backgroundColorTop": "#ffffff",
+		"backgroundColorBottom": "#ffffff"
+	},
+	"tabBar": {
+		"color": "#C0C4CC",
+		"selectedColor": "#000000",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabBar/tab-home.png",
+				"selectedIconPath": "static/tabBar/tab-home-current.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/user/index",
+				"iconPath": "static/tabBar/tab-my.png",
+				"selectedIconPath": "static/tabBar/tab-my-current.png",
+				"text": "我的"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationStyle": "custom"
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+			"name": "", //模式名称
+			"path": "", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	}
+}
