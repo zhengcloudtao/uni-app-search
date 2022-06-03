@@ -377,12 +377,7 @@
 				this.modalName = null
 				this.$store.commit("day", "1")
 			},
-			code() {
-				uni.showToast({
-					icon: 'none',
-					title: '敬请期待！'
-				})
-			},
+		
 			getTimeInfo(name) {
 				let _this = this
 				const myTimetable = _this.$store.state.myTimetable
