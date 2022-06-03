@@ -50,6 +50,9 @@
 					</view>
 
 				</form>
+				<view class="padding flex flex-wrap " :class="isDark?'dark':'bg-gray'">
+					<text class="padding">提示：访客试用输入用户名:12345678</text>
+				</view>
 			</view>
 		</view>
 	</view>

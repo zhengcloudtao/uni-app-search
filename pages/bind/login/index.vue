@@ -5,7 +5,7 @@
 			<block slot="homeText" v-show="!hasBack">主页</block>
 			<block slot="content">用户登录</block>
 		</cu-custom>
-		<view :class="isDark?'dark':''" >
+		<view :class="isDark?'dark':''">
 			<view class="bg-img bg-white flex align-center"
 				style="background-image:url(https://h5.jokeworld.cn/img/new4.png)">
 				<view class="padding-xl text-white" style="font-weight:bold">
@@ -72,11 +72,15 @@
 						</view>
 
 					</form>
-
 					<view class="cu-bar btn-group">
 						<button class="cu-btn bg-blue shadow-blur round lg" @click="forgetPassword()">忘记密码</button>
 						<button class="cu-btn bg-blue shadow-blur round lg" @click="goLogin()">服务大厅</button>
 
+					</view>
+					<view class="margin flex flex-wrap " :class="isDark?'dark':'bg-gray'">
+						<text class="padding">提示：访客试用输入</text>
+						<text class="padding">用户名:12345678</text>
+						<text class="padding">密码:12345678</text>
 					</view>
 					<view class="cu-bar btn-group">
 					</view>

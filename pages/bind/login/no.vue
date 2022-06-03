@@ -4,7 +4,7 @@
 			<block slot="backText">返回</block>
 			<block slot="content">用户绑定</block>
 		</cu-custom>
-		<view :class="isDark?'dark':''" >
+		<view :class="isDark?'dark':''">
 			<view class="bg-img bg-white flex align-center"
 				style="background-image:url(https://h5.jokeworld.cn/img/new4.png)">
 				<view class="padding-xl text-white" style="font-weight:bold">
@@ -22,6 +22,7 @@
 						<view class="title">用户名</view>
 						<input placeholder="(请输入用户名)" :value="username" name="username" maxlength="8"></input>
 					</view>
+
 					<view v-show="needCaptchaShow=='1'">
 						<view class="cu-form-group justify-center" :class="isDark?'darkIn':'light'">
 							<view class="title">验证码</view>
@@ -48,6 +49,9 @@
 					</view>
 
 				</form>
+				<view class="padding flex flex-wrap " :class="isDark?'dark':'bg-gray'">
+					<text class="padding">提示：访客试用输入用户名:12345678</text>
+				</view>
 			</view>
 		</view>
 	</view>
