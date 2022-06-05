@@ -18,13 +18,13 @@
 				<view class="margin flex text-center text-grey  shadow-warp cu-list menu card-menu"
 					:class="isDark?'dark':'bg-white'">
 					<view class=" padding flex flex-direction" :class="isDark?'dark':'bg-white'">
-						<button class="cu-btn round bg-blue text-white lg">考试已安排总数:{{totalList.length}}</button>
+						<button class="cu-btn round bg-blue text-white lg">总数:{{totalList.length}}</button>
 					</view>
 
 				</view>
 
 
-				<view class=" padding text-center" :class="isDark?'dark':'bg-white'">
+				<!-- <view class=" padding text-center" :class="isDark?'dark':'bg-white'">
 					<view style="display: flex;">
 						<span style="width:110rpx;">序号</span>
 						<span style="width: 400rpx;overflow: hidden;word-break: break-all; text-overflow: ellipsis;display: -webkit-box; -webkit-box-orient: vertical; 
@@ -39,7 +39,7 @@
 							时间
 						</span>
 					</view>
-				</view>
+				</view> -->
 
 				<view v-show="showEmptyIcon" style="text-align: center;font-size: 40rpx;"
 					:class="isDark?'darkIn':'bg-white'">
@@ -48,21 +48,20 @@
 					<image src="../../../static/score/empty.png" style="width: 600rpx;height: 600rpx;margin-top: 0rpx;">
 					</image>
 				</view>
-				<view class=" padding text-center" v-for="(val,index) in totalList" :key="index"
+				<view class=" padding" v-for="(val,index) in totalList" :key="index"
 					:class="isDark?'darkIn':'bg-white'">
-					<view style="display: flex;">
+					<view>
 						<span style="width:110rpx;">{{index+1}}</span>
-						<span style="width: 550rpx;overflow: hidden;word-break: break-all; text-overflow: ellipsis;display: -webkit-box; -webkit-box-orient: vertical; 
-			-webkit-line-clamp:1;  ">{{val.name}}</span>
-						<span style="float: right;margin-right: 50rpx;margin-top: 0rpx; width: 100rpx;">
-							{{val.place}}
-						</span>
-						<span style="float: right;margin-right: 50rpx;margin-top: 0rpx; width: 100rpx;">
-							{{val.teacher}}
-						</span>
-						<span style="float: right;margin-right: 50rpx;margin-top: 0rpx; width: 100rpx;">
-							{{val.examTime}}
-						</span>
+						<span style="margin-left: 50rpx;">课程名：{{val.name}}</span>
+						<view style="margin-top: 20rpx;margin-left: 65rpx;">
+							地点：{{val.place}}
+						</view>
+						<view style="margin-top: 20rpx;margin-left: 65rpx;">
+							老师：{{val.teacher}}
+						</view>
+						<view style="margin-top: 20rpx;margin-left: 65rpx;">
+							时间：{{val.examTime}}
+						</view>
 					</view>
 				</view>
 				<view class="padding margin-top flex flex-wrap " :class="isDark?'dark':'bg-white'">

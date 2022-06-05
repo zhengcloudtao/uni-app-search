@@ -16,11 +16,20 @@
 				<!-- <image @click="refreshInfo" src="/static/public/refresh.png" style="width: 9%;height:70rpx;float: left;">
 			</image> -->
 
+				<view class="margin flex text-center text-grey  shadow-warp cu-list menu card-menu"
+					:class="isDark?'dark':'bg-white'">
+					<view class="cu-bar btn-group">
+						<button
+							class="cu-btn bg-brown shadow-blur">学期数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{totalList.length}}</button>
+						<button class="cu-btn text-brown line-brown shadow"><text class="text-brown">平均德育分<text
+									style="font-size: 15rpx;"></text>{{avgScore}}</text></button>
+					</view>
 
+				</view>
 
 				<view class=" padding text-center margin-top margin-bottom" :class="isDark?'darkIn':'bg-white'">
 					<view style="display: flex;">
-						
+
 						<span style="float: right;margin-right: 50rpx;margin-top: 0rpx; width: 300rpx;">
 							学年-学期
 						</span>
@@ -51,7 +60,7 @@
 					<button class="cu-btn round line" @click="refreshInfo()">
 						<text class="cuIcon-refresh text-right" :class="isDark?'dark':''"></text></button>
 				</view>
-		
+
 			</view>
 		</view>
 	</view>
@@ -68,7 +77,8 @@
 				num: null,
 				showEmptyIcon: false,
 				totalXF: 0,
-				isDark: this.isDark
+				isDark: this.isDark,
+				avgScore: 0
 
 
 			}
@@ -107,6 +117,12 @@
 				} else {
 					_this.showEmptyIcon = false
 				}
+				var total = 0
+				for (var i = 0; i < _this.totalList.length; i++) {
+
+					total += parseFloat(_this.totalList[i].educationScore)
+				}
+				_this.avgScore = (total / _this.totalList.length).toFixed(0)
 
 			},
 			/**
@@ -115,7 +131,7 @@
 			refreshInfo: function() {
 				let _this = this
 				var userInfo = _this.$store.state.userInfo
-				if (_this.$store.state.isExit == 1 | userInfo.password == ""|| userInfo.password == null) {
+				if (_this.$store.state.isExit == 1 | userInfo.password == "" || userInfo.password == null) {
 
 					uni.showModal({
 						title: 'Hi',

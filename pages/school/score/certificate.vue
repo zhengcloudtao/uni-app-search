@@ -18,7 +18,7 @@
 				<view class="margin flex text-center text-grey  shadow-warp cu-list menu card-menu"
 					:class="isDark?'dark':'bg-white'">
 					<view class=" padding flex flex-direction" :class="isDark?'dark':'bg-white'">
-						<button class="cu-btn round bg-orange text-white lg">证书总数:{{totalList.length}}</button>
+						<button class="cu-btn round bg-orange text-white lg">总数:{{totalList.length}}</button>
 					</view>
 
 				</view>
