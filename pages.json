@@ -160,6 +160,24 @@
 			}
 
 		}, {
+			"path": "pages/school/score/noScore",
+			"style": {
+				"navigationBarTitleText": "未出成绩"
+			}
+
+		}, {
+			"path": "pages/school/score/certificate",
+			"style": {
+				"navigationBarTitleText": "我的证书"
+			}
+
+		}, {
+			"path": "pages/school/exam/index",
+			"style": {
+				"navigationBarTitleText": "考试安排"
+			}
+
+		}, {
 			"path": "pages/custom/bus/index",
 			"style": {
 				"navigationBarTitleText": "校园巴士"

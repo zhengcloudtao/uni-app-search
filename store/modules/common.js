@@ -6,8 +6,10 @@ export const state = {
 	showStyle: null, //暗夜模式
 	quickIndex: null, //；快速启动
 	noticeIndex: null, //公告栏推送
-	loginStateGo:{},//登录跳转状态
-	day:null
+	loginStateGo: {}, //登录跳转状态
+	day: null,
+	loginTip: null
+
 
 };
 //缓存浏览器的数据名称
@@ -22,6 +24,7 @@ const cacheNameList = [
 	"noticeIndex",
 	"loginStateGo",
 	"day",
+	"loginTip",
 
 	"userInfo",
 
@@ -30,7 +33,10 @@ const cacheNameList = [
 
 	"myTimetable",
 	"loverTimetable",
+	"userExam",
 	"userScore",
+	"userNoScore",
+	"userCertificate",
 	"userScoreRank",
 	"userScoreEducation",
 	"userScoreTerm",
@@ -133,6 +139,18 @@ export const mutations = {
 			// #endif
 		}
 	},
+	loginTip(state, data) {
+
+		state.loginTip = data
+		// #ifdef H5
+		sessionStorage.setItem('loginTip', data);
+		localStorage.setItem('loginTip', data);
+		// #endif
+		// #ifndef H5
+		uni.setStorageSync('loginTip', data);
+		// #endif
+
+	},
 	rem(state, data) {
 		if (data) {
 			state.rem = data
@@ -206,7 +224,7 @@ export const mutations = {
 			// #endif
 		}
 	},
-	loginStateGo(state,data){
+	loginStateGo(state, data) {
 		if (data) {
 			state.loginStateGo = data
 			// #ifdef H5

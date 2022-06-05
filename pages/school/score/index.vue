@@ -121,7 +121,7 @@
 			gradePointShow() {
 				uni.showModal({
 					title: '提示',
-					content: '计算公式:\n(课程学分*课程绩点)的总和/(课程学分)的总和\n(该程序会把零分课程也算在内)',
+					content: '计算公式:\n(课程学分*课程绩点)的总和/(课程学分)的总和\n,采用带两位小数位形式（4舍5入）',
 					showCancel: false,
 					success: function(res) {
 						if (res.confirm) {
@@ -164,16 +164,20 @@
 
 				var jd = 0
 				for (var i = 0; i < _this.list.length; i++) {
-					ss += parseFloat(_this.list[i].gradePoint) * parseFloat(_this.list[i].credit)
-					xx += parseFloat(_this.list[i].credit)
-					jd += parseFloat(_this.list[i].gradePoint)
+					if (_this.list[i].gradePoint != 0) {
+						ss += parseFloat(_this.list[i].gradePoint) * parseFloat(_this.list[i].credit)
+						xx += parseFloat(_this.list[i].credit)
+					} else {
+						console.log("有", _this.list[i].gradePoint)
+					}
+
 				}
 				s = ss / xx
+				console.log(s)
 				_this.avgJD = s.toFixed(2)
 				if (ss == 0) {
 					_this.avgJD = '0'
 				}
-				//console.log(jd / _this.list.length)
 
 			},
 			/**
@@ -201,13 +205,16 @@
 				let _this = this
 				var userInfo = _this.$store.state.userInfo
 				console.log(_this.$store.state.isExit)
-				if (_this.$store.state.isExit == 1 | userInfo.password == "" | userInfo.password == null) {
+				if ((_this.$store.state.isExit == 1 | userInfo.password == "" | userInfo.password == null) && _this
+					.$store.state.loginTip == null) {
+					_this.$store.commit("loginTip", "1")
 					uni.showModal({
 						title: 'Hi',
 						content: '会话已过期，\n当前功能需要登录，是否要去登录?\n(该程序的用户信息只存在手机本地，当切出程序需要重新登录)',
 						confirmText: "去登录",
 						cancelText: "再逛会",
 						success: function(res) {
+							_this.$store.commit("loginTip", null)
 							if (res.confirm) {
 								_this.$Router.navigateTo("/pages/bind/login/index")
 							} else if (res.cancel) {

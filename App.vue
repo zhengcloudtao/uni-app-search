@@ -64,6 +64,7 @@
 		},
 		onHide: function() {
 			console.log('App Hide')
+			store.commit("loginTip", null)
 			//#ifndef MP-WEIXIN
 
 			//#endif
@@ -151,12 +152,12 @@
 				}
 			}
 			//#endif
-			
+
 			// #ifdef MP-WEIXIN
-			Vue.prototype.client= 'WECHAT';
+			Vue.prototype.client = 'WECHAT';
 			// #endif
 			// #ifdef H5
-			Vue.prototype.client= 'H5';
+			Vue.prototype.client = 'H5';
 			// #endif
 			console.log('App Show')
 		},

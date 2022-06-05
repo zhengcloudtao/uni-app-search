@@ -14,7 +14,7 @@
 					<view class="content" :class="isDark?'darkIn':'bg-gray'">
 
 						<view :class="isDark?'text-white':'text-black'">
-							我的课表、情侣课表、我的成绩、选修成绩
+							我的课表、情侣课表、我的成绩、选修成绩、未出成绩、考试安排、我的证书
 						</view>
 						<view class="cu-capsule radius margin-top">
 							<view class="cu-tag bg-blue">来自</view>
@@ -58,7 +58,7 @@
 				<view class="cu-item">
 					<view class="content" :class="isDark?'darkIn':'bg-gray'">
 						<view :class="isDark?'text-white':'text-black'">
-							核酸地点
+							核酸地点（已下线）
 						</view>
 						<view class="cu-capsule radius margin-top">
 							<view class="cu-tag bg-blue">来自</view>

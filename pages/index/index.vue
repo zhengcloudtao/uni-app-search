@@ -199,8 +199,27 @@
 							<text>综测成绩</text>
 						</navigator>
 					</view>
-
-
+					<view class="cu-item">
+						<navigator class="funcBtn" url="/pages/school/score/noScore" v-if="isShowStudent">
+							<view class="cuIcon-edit text-pink">
+							</view>
+							<text>未出成绩</text>
+						</navigator>
+					</view>
+					<view class="cu-item">
+						<navigator class="funcBtn" url="/pages/school/exam/index" v-if="isShowStudent">
+							<view class="cuIcon-write text-blue">
+							</view>
+							<text>考试安排</text>
+						</navigator>
+					</view>
+					<view class="cu-item">
+						<navigator class="funcBtn" url="/pages/school/score/certificate" v-if="isShowStudent">
+							<view class="cuIcon-read text-orange">
+							</view>
+							<text>我的证书</text>
+						</navigator>
+					</view>
 				</view>
 				<view class="cu-bar  solid-bottom margin-top" :class="isDark?'darkIn':'bg-gray'">
 					<view class="action">
@@ -223,7 +242,7 @@
 							<text>校园巴士</text>
 						</navigator>
 					</view>
-<!-- 
+					<!-- 
 					<view class="cu-item">
 						<navigator class="funcBtn" url="/pages/custom/virus/index" v-if="isShowStudent">
 							<view class="cuIcon-safe text-pink">
@@ -246,7 +265,7 @@
 							<text>校园地图</text>
 						</navigator>
 					</view>
-				
+
 
 				</view>
 				<view class="cu-bar  solid-bottom margin-top" :class="isDark?'darkIn':'bg-gray'">
@@ -377,7 +396,7 @@
 				this.modalName = null
 				this.$store.commit("day", "1")
 			},
-		
+
 			getTimeInfo(name) {
 				let _this = this
 				const myTimetable = _this.$store.state.myTimetable

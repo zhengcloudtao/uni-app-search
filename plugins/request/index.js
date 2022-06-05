@@ -52,13 +52,16 @@ export const $http = (url, method, data, json, load) => {
 			console.log("token失效")
 			return response.data = await doRequest(response, response.config.Url, response.config
 				.method) //动态刷新token,并重新完成request请求
-		} else if (response.data.status == 608 && noUsernameArr.indexOf(currentRoute) != -1) {
+		} else if (response.data.status == 608 && noUsernameArr.indexOf(currentRoute) != -1 && store.state
+			.loginTip == null) {
+			store.commit("loginTip", "1")
 			uni.showModal({
 				title: 'Hi',
 				content: '当前还没登录,是否要去输入学号',
 				confirmText: "去登录",
 				cancelText: "再逛会",
 				success: function(res) {
+					store.commit("loginTip", null)
 					if (res.confirm) {
 						router.navigateTo("/pages/bind/login/no")
 					} else if (res.cancel) {
@@ -69,13 +72,16 @@ export const $http = (url, method, data, json, load) => {
 					}
 				}
 			});
-		} else if (response.data.status == 608 && noTokenArr.indexOf(currentRoute) == -1) {
+		} else if (response.data.status == 608 && noTokenArr.indexOf(currentRoute) == -1 && store.state
+			.loginTip == null) {
+			store.commit("loginTip", "1")
 			uni.showModal({
 				title: 'Hi',
 				content: '会话已过期，\n当前功能需要登录,是否要去登录?\n(该程序的用户信息只存在手机本地，当切出程序需要重新登录)',
 				confirmText: "去登录",
 				cancelText: "再逛会",
 				success: function(res) {
+					store.commit("loginTip", null)
 					if (res.confirm) {
 						router.navigateTo("/pages/bind/login/index")
 					} else if (res.cancel) {
@@ -86,7 +92,7 @@ export const $http = (url, method, data, json, load) => {
 					}
 				}
 			});
-		} else if (response.data.status == 603 && currentRoute!='pages/bind/login/index') {
+		} else if (response.data.status == 603 && currentRoute != 'pages/bind/login/index') {
 			uni.showModal({
 				title: 'Hi',
 				content: '账号密码错误或者不存在!',

@@ -1,35 +1,47 @@
 import api from '../../plugins/request/'
-const school="/cloud/service-school"
+const school = "/cloud/service-school"
 export async function myTimetable(params) {
-	let res = await api.get(school+'/timetable/my', params, true);
+	let res = await api.get(school + '/timetable/my', params, true);
 	return res
 }
 export async function loverTimetable(params) {
-	let res = await api.get(school+'/timetable/lover', params, true);
+	let res = await api.get(school + '/timetable/lover', params, true);
 	return res
 }
 export async function scoreTerm(params) {
-	let res = await api.get(school+'/score/term', params, true);
+	let res = await api.get(school + '/score/term', params, true);
 	return res
 }
 export async function score(params) {
-	let res = await api.get(school+'/score/info', params, true);
+	let res = await api.get(school + '/score/info', params, true);
+	return res
+}
+export async function noScore(params) {
+	let res = await api.get(school + '/score/no', params, true);
+	return res
+}
+export async function certificate(params) {
+	let res = await api.get(school + '/score/certificate', params, true);
+	return res
+}
+export async function exam(params) {
+	let res = await api.get(school + '/exam/info', params, true);
 	return res
 }
 export async function scoreXG(params) {
-	let res = await api.get(school+'/score/xg/info', params, true);
+	let res = await api.get(school + '/score/xg/info', params, true);
 	return res
 }
 export async function volunteers(params) {
-	let res = await api.get(school+'/volunteers/info', params, true);
+	let res = await api.get(school + '/volunteers/info', params, true);
 	return res
 }
 export async function bus(params) {
-	let res = await api.get(school+'/bus/info', params, true);
+	let res = await api.get(school + '/bus/info', params, true);
 	return res
 }
 export async function virusPlace(params) {
-	let res = await api.get(school+'/virus/placeInfo', params, true);
+	let res = await api.get(school + '/virus/placeInfo', params, true);
 	return res
 }
 export default {
@@ -38,8 +50,11 @@ export default {
 	scoreTerm,
 	score,
 	scoreXG,
+	certificate,
+	noScore,
 	volunteers,
 	bus,
-	virusPlace
+	virusPlace,
+	exam
 
 }
