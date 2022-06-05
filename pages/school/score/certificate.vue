@@ -24,20 +24,7 @@
 				</view>
 
 
-				<view class=" padding text-center" :class="isDark?'dark':'bg-white'">
-					<view style="display: flex;">
-						<span style="width:110rpx;">序号</span>
-						<span style="width: 550rpx;overflow: hidden;word-break: break-all; text-overflow: ellipsis;display: -webkit-box; -webkit-box-orient: vertical; 
-			-webkit-line-clamp:1;green">名称</span>
 
-						<span style="float: right;margin-right: 50rpx;margin-top: 0rpx; width: 100rpx;">
-							种类
-						</span>
-						<span style="float: right;margin-right: 50rpx;margin-top: 0rpx; width: 100rpx;">
-							成绩
-						</span>
-					</view>
-				</view>
 
 				<view v-show="showEmptyIcon" style="text-align: center;font-size: 40rpx;"
 					:class="isDark?'darkIn':'bg-white'">
@@ -46,19 +33,22 @@
 					<image src="../../../static/score/empty.png" style="width: 600rpx;height: 600rpx;margin-top: 0rpx;">
 					</image>
 				</view>
-				<view class=" padding text-center" v-for="(val,index) in totalList" :key="index"
+				<view class=" padding margin" v-for="(val,index) in totalList" :key="index"
 					:class="isDark?'darkIn':'bg-white'">
-					<view style="display: flex;">
-						<span style="width:110rpx;">{{index+1}}</span>
-						<span style="width: 550rpx;overflow: hidden;word-break: break-all; text-overflow: ellipsis;display: -webkit-box; -webkit-box-orient: vertical; 
-			-webkit-line-clamp:2;  ">{{val.name}}</span>
-
-						<span style="float: right;margin-right: 50rpx;margin-top: 0rpx; width: 100rpx;">
-							{{val.type}}
-						</span>
-						<span style="float: right;margin-right: 50rpx;margin-top: 0rpx; width: 100rpx;">
-							{{val.score}}
-						</span>
+					<view>
+						<view>
+							<span style="width:110rpx;">{{index+1}}</span>
+							<span style="margin-left: 50rpx;">证书名称：{{val.name}}</span>
+						</view>
+						<view style="margin-top: 20rpx;margin-left: 65rpx;">
+							证书类型：{{val.type}}
+						</view>
+						<view style="margin-top: 20rpx;margin-left: 65rpx;">
+							证书成绩：{{val.score}}
+						</view>
+						<view style="margin-top: 20rpx;margin-left: 65rpx;">
+							证书获取日期：{{val.time}}
+						</view>
 					</view>
 				</view>
 				<view class="padding margin-top flex flex-wrap " :class="isDark?'dark':'bg-white'">

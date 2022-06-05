@@ -48,7 +48,7 @@
 					<image src="../../../static/score/empty.png" style="width: 600rpx;height: 600rpx;margin-top: 0rpx;">
 					</image>
 				</view>
-				<view class=" padding" v-for="(val,index) in totalList" :key="index"
+				<view class=" margin padding" v-for="(val,index) in totalList" :key="index"
 					:class="isDark?'darkIn':'bg-white'">
 					<view>
 						<span style="width:110rpx;">{{index+1}}</span>
