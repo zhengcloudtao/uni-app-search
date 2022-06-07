@@ -172,6 +172,12 @@
 			}
 
 		}, {
+			"path": "pages/school/score/share",
+			"style": {
+				"navigationBarTitleText": "分享成绩"
+			}
+
+		}, {
 			"path": "pages/school/exam/index",
 			"style": {
 				"navigationBarTitleText": "考试安排"

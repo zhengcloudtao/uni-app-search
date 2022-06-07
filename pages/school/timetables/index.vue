@@ -14,7 +14,7 @@
 			<view class='radius shadow-lg' :class="isDark?'padding-xs':'margin-xs light'">
 				<view class="cu-bar  solid-bottom" style="font-weight:bold">
 					<view class="action">
-						<text class="cuIcon-titles text-blue"></text>课表查询
+						<text class="cuIcon-titles text-blue"></text>我的课表
 						<text class="cuIcon-search"></text>
 						<view class="padding-left-sm margin-sm">
 							<text class="cuIcon-refresh text-gray" @click="refresh"></text>

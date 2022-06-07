@@ -186,6 +186,20 @@
 						</navigator>
 					</view>
 					<view class="cu-item">
+						<navigator class="funcBtn" url="/pages/school/score/noScore" v-if="isShowStudent">
+							<view class="cuIcon-edit text-pink">
+							</view>
+							<text>未出成绩</text>
+						</navigator>
+					</view>
+					<view class="cu-item">
+						<navigator class="funcBtn" url="/pages/school/score/share" v-if="isShowStudent">
+							<view class="cuIcon-share text-purple">
+							</view>
+							<text>分享成绩</text>
+						</navigator>
+					</view>
+					<view class="cu-item">
 						<navigator class="funcBtn" url="/pages/school/score/rank" v-if="isShowStudent">
 							<view class="cuIcon-rank text-red">
 							</view>
@@ -199,13 +213,7 @@
 							<text>综测成绩</text>
 						</navigator>
 					</view>
-					<view class="cu-item">
-						<navigator class="funcBtn" url="/pages/school/score/noScore" v-if="isShowStudent">
-							<view class="cuIcon-edit text-pink">
-							</view>
-							<text>未出成绩</text>
-						</navigator>
-					</view>
+
 					<view class="cu-item">
 						<navigator class="funcBtn" url="/pages/school/exam/index" v-if="isShowStudent">
 							<view class="cuIcon-write text-blue">

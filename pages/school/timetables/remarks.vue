@@ -9,7 +9,7 @@
 
 			<view class="cu-bar bg-white solid-bottom" style="font-weight:bold" :class="isDark?'dark':'bg-white'">
 				<view class="action">
-					<text class="cuIcon-titles text-cyan"></text>备注
+					<text class="cuIcon-titles text-cyan"></text>课表备注
 					<text class="cuIcon-search"></text>
 				</view>
 			</view>
