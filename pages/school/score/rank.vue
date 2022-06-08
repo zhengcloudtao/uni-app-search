@@ -76,7 +76,9 @@
 				</view>
 			</view>
 		</view>
-	</view>
+		<zmm-watermark>
+
+		</zmm-watermark>
 	</view>
 </template>
 <script>
@@ -112,7 +114,7 @@
 				let _this = this
 				var total = 0
 				for (var i = 0; i < _this.totalList.length; i++) {
-				
+
 					total += parseFloat(_this.totalList[i].majorRank)
 				}
 				_this.avgMajor = (total / _this.totalList.length).toFixed(0)

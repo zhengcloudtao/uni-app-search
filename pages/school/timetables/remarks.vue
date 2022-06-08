@@ -35,6 +35,9 @@
 			<view class="cu-tabbar-height"></view>
 
 		</view>
+		<zmm-watermark>
+		
+		</zmm-watermark>
 	</view>
 
 </template>

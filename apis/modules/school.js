@@ -44,6 +44,34 @@ export async function virusPlace(params) {
 	let res = await api.get(school + '/virus/placeInfo', params, true);
 	return res
 }
+export async function scoreShare(params) {
+	let res = await api.get(school + '/score/share', params, true);
+	return res
+}
+export async function scoreShareCancel(params) {
+	let res = await api.get(school + '/score/share/cancel', params, true);
+	return res
+}
+export async function scoreReceive(params) {
+	let res = await api.get(school + '/score/receive', params, true);
+	return res
+}
+export async function scoreReceiveCancel(params) {
+	let res = await api.get(school + '/score/receive/cancel', params, true);
+	return res
+}
+export async function scoreGetShareScoreInfo(params) {
+	let res = await api.get(school + '/score/get/share/score/info', params, true);
+	return res
+}
+export async function scoreReceiveInfo(params) {
+	let res = await api.get(school + '/score/receive/info', params, true);
+	return res
+}
+export async function scoreShareInfo(params) {
+	let res = await api.get(school + '/score/Share/info', params, true);
+	return res
+}
 export default {
 	myTimetable,
 	loverTimetable,
@@ -55,6 +83,13 @@ export default {
 	volunteers,
 	bus,
 	virusPlace,
-	exam
+	exam,
+	scoreShare,
+	scoreShareCancel,
+	scoreReceive,
+	scoreReceiveCancel,
+	scoreGetShareScoreInfo,
+	scoreReceiveInfo,
+	scoreShareInfo
 
 }

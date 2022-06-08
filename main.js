@@ -5,6 +5,8 @@ import Vue from 'vue'
 Vue.config.productionTip = false
 import cuCustom from '@/colorui/components/cu-custom.vue'
 Vue.component('cu-custom', cuCustom)
+import waterMarker from "@/uni_modules/zmm-watermark/components/zmm-watermark/zmm-watermark.vue"
+Vue.component('zmm-watermark', waterMarker)
 //store
 import store from '@/store'
 Vue.prototype.$store = store;

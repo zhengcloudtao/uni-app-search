@@ -2,7 +2,7 @@ export default {
 	data() {
 		return {
 			share: {
-				title: '一个校内学生做的公益小程序',
+				title: '一个校内学生做的公益毕设',
 				imageUrl: 'https://h5.jokeworld.cn/img/share.png?id=' + (new Date()).valueOf(),
 			}
 		}

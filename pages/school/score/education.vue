@@ -63,7 +63,9 @@
 
 			</view>
 		</view>
-	</view>
+		<zmm-watermark>
+
+		</zmm-watermark>
 	</view>
 </template>
 <script>

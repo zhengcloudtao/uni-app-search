@@ -10,6 +10,9 @@
 					<view class="action">
 						<text class="cuIcon-titles text-grey"></text>成绩查询
 						<text class="cuIcon-search"></text>
+						<button class="cu-btn bg-red round " open-type="share"
+							style="margin-left:220rpx;">分享给好友</button>
+
 					</view>
 				</view>
 				<view class="cu-list menu card-menu card-menu margin-top-xl margin-bottom-xl text-center"
@@ -80,9 +83,15 @@
 				<view class="padding margin-top flex flex-wrap " :class="isDark?'dark':'bg-white'">
 					<button class="cu-btn round line" @click="refreshInfo()">
 						<text class="cuIcon-refresh text-right" :class="isDark?'dark':''"></text></button>
+
 				</view>
+
+
 			</view>
 		</view>
+		<zmm-watermark>
+		
+		</zmm-watermark>
 	</view>
 </template>
 <script>
@@ -105,6 +114,7 @@
 
 
 		},
+		
 		onShow() {
 			let _this = this
 			_this.list = _this.$store.state.userScore
@@ -118,6 +128,7 @@
 
 		},
 		methods: {
+		
 			gradePointShow() {
 				uni.showModal({
 					title: '提示',

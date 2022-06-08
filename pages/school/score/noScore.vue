@@ -67,7 +67,9 @@
 				</view>
 			</view>
 		</view>
-	</view>
+		<zmm-watermark>
+
+		</zmm-watermark>
 	</view>
 </template>
 <script>
@@ -100,7 +102,7 @@
 		methods: {
 			setData() {
 				let _this = this
-			
+
 
 				if (_this.totalList.length <= 0) {
 					_this.showEmptyIcon = true

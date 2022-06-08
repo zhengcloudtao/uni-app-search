@@ -178,6 +178,18 @@
 			}
 
 		}, {
+			"path": "pages/school/score/myShare",
+			"style": {
+				"navigationBarTitleText": "我分享的成绩"
+			}
+
+		}, {
+			"path": "pages/school/score/myReceive",
+			"style": {
+				"navigationBarTitleText": "我接受的成绩"
+			}
+
+		}, {
 			"path": "pages/school/exam/index",
 			"style": {
 				"navigationBarTitleText": "考试安排"

@@ -18,6 +18,7 @@
 2. [request](https://ext.dcloud.net.cn/plugin?id=6210)
 3. [colorUI](https://github.com/weilanwl/ColorUI)
 4. [课表](https://ext.dcloud.net.cn/plugin?id=5553)
+5. [zmm-watermark](https://ext.dcloud.net.cn/plugin?id=4587)
 
 感谢以上插件，使用过程中学习到很多，也对其中的bug修复与完善体现在项目中。
 

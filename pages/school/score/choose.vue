@@ -21,8 +21,7 @@
 						<button
 							class="cu-btn bg-green shadow-blur">课程数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{totalList.length}}</button>
 						<button class="cu-btn text-green line-green shadow"><text @click="scoreShow"
-								class="text-blue">学分<text
-									style="font-size: 15rpx;"></text>{{totalXF}}</text></button>
+								class="text-blue">学分<text style="font-size: 15rpx;"></text>{{totalXF}}</text></button>
 					</view>
 
 				</view>
@@ -75,7 +74,9 @@
 				</view>
 			</view>
 		</view>
-	</view>
+		<zmm-watermark>
+
+		</zmm-watermark>
 	</view>
 </template>
 <script>

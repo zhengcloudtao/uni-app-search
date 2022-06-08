@@ -22,6 +22,7 @@
 				</swiper>
 			</view>z
 		</view>
+
 		<swiper class="card-swiper" :class="dotStyle?'square-dot':'round-dot'" :indicator-dots="true" :circular="true"
 			:autoplay="true" interval="5000" duration="500" @change="cardSwiper" indicator-color="#8799a3"
 			indicator-active-color="#0081ff" style="height: 600rpx;">
@@ -120,6 +121,7 @@
 				</view>
 			</swiper-item>
 		</swiper>
+		
 		<view class="cu-card case bg-white å no-card" :class="isDark?'dark':''">
 
 
@@ -326,6 +328,7 @@
 					</view>
 				</view>
 			</view> -->
+			
 		</view>
 	</view>
 
@@ -333,6 +336,7 @@
 
 <script>
 	export default {
+		
 		data() {
 			return {
 				msg: [],
