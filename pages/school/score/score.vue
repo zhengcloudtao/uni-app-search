@@ -76,11 +76,11 @@
 					<image src="../../../static/score/empty.png" style="width: 600rpx;height: 600rpx;margin-top: 0rpx;">
 					</image>
 				</view>
-				<view style="display: flex;">
-					<view class="flex flex-sub flex-direction ">
-						<view class=" padding margin-left  radius solid-bottom" v-for="(val,index) in list" :key="index"
+				<view style="display: flex;" class="padding">
+					<view class="flex flex-sub flex-direction solid-right">
+						<view class="padding   radius solid-bottom" v-for="(val,index) in list" :key="index"
 							:class="isDark?'darkIn':'bg-white'" style="width: 100%;height: 400rpx;">
-							<view class="solid-right">
+							<view >
 								<view>{{index+1}}</view>
 								<view class="margin-top">课程名：{{val.courseName}}</view>
 								<view class="margin-top">
@@ -92,9 +92,9 @@
 							</view>
 						</view>
 					</view>
-					<view class="margin-right flex flex-sub flex-direction ">
-						<view class="padding margin-right  radius solid-bottom" v-for="(val,index) in listHe"
-							:key="index" :class="isDark?'darkIn':'bg-white'" style="width: 100%;height: 400rpx;">
+					<view class="flex flex-sub flex-direction ">
+						<view class="padding  radius solid-bottom" v-for="(val,index) in listHe" :key="index"
+							:class="isDark?'darkIn':'bg-white'" style="width: 100%;height: 400rpx;">
 							<view>
 								<view>{{index+1}}</view>
 								<view class="margin-top">课程名：{{val.courseName}}</view>
