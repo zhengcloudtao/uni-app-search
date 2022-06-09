@@ -35,19 +35,19 @@
 				</view>
 				<view class=" padding margin" v-for="(val,index) in totalList" :key="index"
 					:class="isDark?'darkIn':'bg-white'">
-					<view>
+					<view style="display: flex;">
+						<view style="width:10rpx;">{{index+1}}</view>
 						<view>
-							<span style="width:110rpx;">{{index+1}}</span>
-							<span style="margin-left: 50rpx;">证书名称：{{val.name}}</span>
-						</view>
-						<view style="margin-top: 20rpx;margin-left: 65rpx;">
-							证书类型：{{val.type}}
-						</view>
-						<view style="margin-top: 20rpx;margin-left: 65rpx;">
-							证书成绩：{{val.score}}
-						</view>
-						<view style="margin-top: 20rpx;margin-left: 65rpx;">
-							证书获取日期：{{val.time}}
+							<view style="margin-left: 65rpx;">证书名称：{{val.name}}</view>
+							<view style="margin-top: 20rpx;margin-left: 65rpx;">
+								证书类型：{{val.type}}
+							</view>
+							<view style="margin-top: 20rpx;margin-left: 65rpx;">
+								证书成绩：{{val.score}}
+							</view>
+							<view style="margin-top: 20rpx;margin-left: 65rpx;">
+								证书获取日期：{{val.time}}
+							</view>
 						</view>
 					</view>
 				</view>

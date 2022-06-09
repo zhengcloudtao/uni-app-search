@@ -128,7 +128,7 @@
 					//console.log(response.code)
 					if (response.status == 0) {
 						var total = 0;
-						if (response.data[0].checkNum) {
+						if (response.data[0].name) {
 							var date = new Date();
 							var month = date.getMonth() + 1;
 							var curDate = date.getDate();

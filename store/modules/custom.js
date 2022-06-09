@@ -10,9 +10,10 @@ export const state = {
 	loverTimeTableMyColor: null,
 	loverTimeTableLoverColor: null,
 	loverTimeTableBgUrl: null,
-	
-	busChoice:null,
-	busTip:null
+
+	busChoice: null,
+	busTip: null,
+	scoreShareTip: null
 };
 export const mutations = {
 
@@ -26,7 +27,7 @@ export const mutations = {
 			// #ifndef H5
 			uni.setStorageSync('myCustomTimetable', data);
 			// #endif
-		}else{
+		} else {
 			state.myCustomTimetable = {}
 			// #ifdef H5
 			sessionStorage.setItem('myCustomTimetable', {});
@@ -47,7 +48,7 @@ export const mutations = {
 			// #ifndef H5
 			uni.setStorageSync('myCustomLoveTimetable', data);
 			// #endif
-		}else{
+		} else {
 			state.myCustomLoveTimetable = {}
 			// #ifdef H5
 			sessionStorage.setItem('myCustomLoveTimetable', {});
@@ -75,7 +76,7 @@ export const mutations = {
 		if (data) {
 			state.timeTableColorIndex = data
 			// #ifdef H5
-			sessionStorage.setItem('timeTableColorIndex',JSON.stringify(data));
+			sessionStorage.setItem('timeTableColorIndex', JSON.stringify(data));
 			localStorage.setItem('timeTableColorIndex', JSON.stringify(data));
 			// #endif
 			// #ifndef H5
@@ -152,7 +153,7 @@ export const mutations = {
 	},
 	busChoice(state, data) {
 		if (data) {
-			state.busChoice= data
+			state.busChoice = data
 			// #ifdef H5
 			sessionStorage.setItem('busChoice', data);
 			localStorage.setItem('busChoice', data);
@@ -160,18 +161,31 @@ export const mutations = {
 			// #ifndef H5
 			uni.setStorageSync('busChoice', data);
 			// #endif
-	
+
 		}
 	},
 	busTip(state, data) {
 		if (data) {
-			state.busTip= data
+			state.busTip = data
 			// #ifdef H5
 			sessionStorage.setItem('busTip', data);
 			localStorage.setItem('busTip', data);
 			// #endif
 			// #ifndef H5
 			uni.setStorageSync('busTip', data);
+			// #endif
+
+		}
+	},
+	scoreShareTip(state, data) {
+		if (data) {
+			state.scoreShareTip = data
+			// #ifdef H5
+			sessionStorage.setItem('scoreShareTip', data);
+			localStorage.setItem('scoreShareTip', data);
+			// #endif
+			// #ifndef H5
+			uni.setStorageSync('scoreShareTip', data);
 			// #endif
 	
 		}

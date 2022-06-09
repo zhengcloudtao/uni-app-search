@@ -26,6 +26,7 @@ const cacheNameList = [
 	"day",
 	"loginTip",
 
+
 	"userInfo",
 
 	"myCustomTimetable",
@@ -51,7 +52,8 @@ const cacheNameList = [
 	"loverTimeTableLoverColor",
 	"loverTimeTableBgUrl",
 	"busChoice",
-	"busTip"
+	"busTip",
+	"scoreShareTip",
 ];
 export const mutations = {
 	//取出缓存数据（打开APP就取出）

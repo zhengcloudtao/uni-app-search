@@ -190,6 +190,12 @@
 			}
 
 		}, {
+			"path": "pages/school/score/score",
+			"style": {
+				"navigationBarTitleText": "他/她的成绩"
+			}
+
+		}, {
 			"path": "pages/school/exam/index",
 			"style": {
 				"navigationBarTitleText": "考试安排"

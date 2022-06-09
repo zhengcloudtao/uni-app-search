@@ -2,18 +2,15 @@
 	<view :class="isDark?'darkBg':''">
 		<cu-custom :bgColor="isDark?'bg-black':'bg-grey'" isBack="true">
 			<block slot="backText">返回</block>
-			<block slot="content">我的成绩</block>
+			<block slot="content">他/她的成绩</block>
 		</cu-custom>
 		<view :class="isDark?'dark':''">
 			<view style="padding-top: 20rpx;">
-				
+
 				<view class="cu-bar  solid-bottom" style="font-weight:bold" :class="isDark?'dark':'bg-white'">
 					<view class="action">
-						<text class="cuIcon-titles text-grey"></text>成绩查询
+						<text class="cuIcon-titles text-grey"></text>他/她的成绩查询
 						<text class="cuIcon-search"></text>
-						<button class="cu-btn bg-red round " @click="scoreShare"
-							style="margin-left:220rpx;">分享给好友</button>
-
 					</view>
 				</view>
 				<view class="cu-list menu card-menu card-menu margin-top-xl margin-bottom-xl text-center"
@@ -32,34 +29,46 @@
 				</view>
 				<view class="padding flex margin text-center text-grey" :class="isDark?'darkIn':'bg-white'">
 					<view class="flex flex-sub flex-direction solid-right">
+						<view class="text-ml" :class="isDark?'text-white':'text-black'">我的</view>
+
+					</view>
+					<view class="flex flex-sub flex-direction ">
+						<view class="text-ml" :class="isDark?'text-white':'text-black'">他/她的</view>
+
+					</view>
+				</view>
+				<view class="padding flex margin text-center text-grey" :class="isDark?'darkIn':'bg-white'">
+					<view class="flex flex-sub flex-direction solid-right">
 						<view class="text-ml " :class="isDark?'text-blue':'text-blue'" @click="gradePointShow">平均绩点
 						</view>
 						<view class="margin-top-sm">
 							<text class="cuIcon-favorfill margin-right-sm"></text> {{avgJD}}
 						</view>
 					</view>
+					<view class="flex flex-sub flex-direction ">
+						<view class="text-ml " :class="isDark?'text-blue':'text-blue'" @click="gradePointShow">平均绩点
+						</view>
+						<view class="margin-top-sm">
+							<text class="cuIcon-favorfill margin-right-sm"></text> {{avgJDHe}}
+						</view>
+					</view>
+				</view>
+				<view class="padding flex margin text-center text-grey" :class="isDark?'darkIn':'bg-white'">
 					<view class="flex flex-sub flex-direction solid-right">
 						<view class="text-ml" :class="isDark?'text-white':'text-black'">课程数</view>
 						<view class="margin-top-sm">
 							<text class="cuIcon-attentionfill margin-right-sm"></text> {{scoreNum}}
 						</view>
 					</view>
-				</view>
-
-				<view class="padding margin-left margin-right margin-top text-center radius"
-					:class="isDark?'darkIn':'bg-white'">
-					<view style="display: flex;">
-						<span style="width:110rpx;">序号</span>
-						<span style="width: 550rpx;overflow: hidden;word-break: break-all; text-overflow: ellipsis;display: -webkit-box; -webkit-box-orient: vertical; 
-			-webkit-line-clamp:1;  ">课程名</span>
-						<span style="float: right;margin-right: 50rpx;margin-top: 0rpx; width: 100rpx;">
-							成绩
-						</span>
-						<span style="float: right;margin-right: 50rpx;margin-top: 0rpx; width: 100rpx;">
-							绩点
-						</span>
+					<view class="flex flex-sub flex-direction ">
+						<view class="text-ml" :class="isDark?'text-white':'text-black'">课程数</view>
+						<view class="margin-top-sm">
+							<text class="cuIcon-attentionfill margin-right-sm"></text> {{scoreNumHe}}
+						</view>
 					</view>
 				</view>
+
+
 				<view v-show="showEmptyIcon" style="text-align: center;font-size: 40rpx;"
 					class="margin-left margin-right" :class="isDark?'darkIn':'bg-white'">
 
@@ -67,18 +76,36 @@
 					<image src="../../../static/score/empty.png" style="width: 600rpx;height: 600rpx;margin-top: 0rpx;">
 					</image>
 				</view>
-				<view class=" padding margin-left margin-right text-center radius solid-bottom"
-					v-for="(val,index) in list" :key="index" :class="isDark?'darkIn':'bg-white'">
-					<view style="display: flex;">
-						<span style="width:110rpx;">{{index+1}}</span>
-						<span style="width: 550rpx;overflow: hidden;word-break: break-all; text-overflow: ellipsis;display: -webkit-box; -webkit-box-orient: vertical; 
--webkit-line-clamp:1;  ">{{val.courseName}}</span>
-						<span style="float: right;margin-right: 50rpx;margin-top: 0rpx; width: 100rpx;">
-							{{val.score}}
-						</span>
-						<span style="float: right;margin-right: 50rpx;margin-top: 0rpx; width: 100rpx;">
-							{{val.gradePoint}}
-						</span>
+				<view style="display: flex;">
+					<view class="flex flex-sub flex-direction ">
+						<view class=" padding margin-left  radius solid-bottom" v-for="(val,index) in list" :key="index"
+							:class="isDark?'darkIn':'bg-white'" style="width: 100%;height: 400rpx;">
+							<view class="solid-right">
+								<view>{{index+1}}</view>
+								<view class="margin-top">课程名：{{val.courseName}}</view>
+								<view class="margin-top">
+									成绩：{{val.score}}
+								</view>
+								<view class="margin-top">
+									绩点：{{val.gradePoint}}
+								</view>
+							</view>
+						</view>
+					</view>
+					<view class="margin-right flex flex-sub flex-direction ">
+						<view class="padding margin-right  radius solid-bottom" v-for="(val,index) in listHe"
+							:key="index" :class="isDark?'darkIn':'bg-white'" style="width: 100%;height: 400rpx;">
+							<view>
+								<view>{{index+1}}</view>
+								<view class="margin-top">课程名：{{val.courseName}}</view>
+								<view class="margin-top">
+									成绩：{{val.score}}
+								</view>
+								<view class="margin-top">
+									绩点：{{val.gradePoint}}
+								</view>
+							</view>
+						</view>
 					</view>
 				</view>
 				<view class="padding margin-top flex flex-wrap " :class="isDark?'dark':'bg-white'">
@@ -103,16 +130,21 @@
 				index: 0,
 				list: [], //显示
 				totalList: [], //全部
+				totalListHe: [], //全部
 				total: null,
 				num: null,
 				showEmptyIcon: false,
 				avgJD: 0,
 				isDark: this.isDark,
-				scoreNum: 0
+				scoreNum: 0,
+				scoreNumHe: 0,
+				avgJDHe: 0,
+				listHe: [], //显示
+				key: null,
 			}
 		},
-		onLoad() {
-
+		onLoad(option) {
+			this.key = option.key
 
 		},
 
@@ -166,11 +198,20 @@
 				}
 				_this.list = nowArray
 				_this.scoreNum = _this.list.length
-				if (_this.list.length <= 0) {
-					_this.showEmptyIcon = true
-				} else {
-					_this.showEmptyIcon = false
+
+				nowArray = [];
+				for (var i = 0; i < _this.totalListHe.length; i++) {
+					if (_this.totalListHe[i].term == _this.array[_this.index]) {
+						nowArray.push(_this.totalListHe[i])
+					} else {}
 				}
+				_this.listHe = nowArray
+				_this.scoreNumHe = _this.listHe.length
+				// if (_this.list.length <= 0) {
+				// 	_this.showEmptyIcon = true
+				// } else {
+				// 	_this.showEmptyIcon = false
+				// }
 				//计算
 				var s = 0
 				var ss = 0
@@ -191,6 +232,27 @@
 				_this.avgJD = s.toFixed(2)
 				if (ss == 0) {
 					_this.avgJD = '0'
+				}
+
+				s = 0
+				ss = 0
+				xx = 0
+
+				jd = 0
+				for (var i = 0; i < _this.listHe.length; i++) {
+					if (_this.listHe[i].gradePoint != 0) {
+						ss += parseFloat(_this.listHe[i].gradePoint) * parseFloat(_this.listHe[i].credit)
+						xx += parseFloat(_this.listHe[i].credit)
+					} else {
+						console.log("有", _this.listHe[i].gradePoint)
+					}
+
+				}
+				s = ss / xx
+				console.log(s)
+				_this.avgJDHe = s.toFixed(2)
+				if (ss == 0) {
+					_this.avgJDHe = '0'
 				}
 
 			},
@@ -252,6 +314,35 @@
 						_this.list = response.data
 						_this.totalList = response.data
 						_this.$store.commit("userScore", response.data)
+						// uni.showToast({
+						// 	icon: 'none',
+						// 	title: '成功获取数据',
+						// 	duration: 2000
+						// });
+						_this.changeList()
+
+					} else if (response.status != 608 && response.status != 603) {
+						uni.showModal({
+							title: '提示',
+							content: response.msg,
+							showCancel: false,
+							success: function(res) {
+								if (res.confirm) {
+
+								} else if (res.cancel) {
+
+								}
+							}
+						});
+					}
+				})
+				form = {
+					key: _this.key
+				}
+				_this.$schoolApi.scoreGetShareScoreInfo(form).then(response => {
+					if (response.status == 0) {
+						_this.totalListHe = response.data
+						_this.listHe = response.data
 						uni.showToast({
 							icon: 'none',
 							title: '成功获取数据',

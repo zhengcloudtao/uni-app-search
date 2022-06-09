@@ -252,14 +252,14 @@
 							<text>校园巴士</text>
 						</navigator>
 					</view>
-					<!-- 
+					
 					<view class="cu-item">
 						<navigator class="funcBtn" url="/pages/custom/virus/index" v-if="isShowStudent">
 							<view class="cuIcon-safe text-pink">
 							</view>
 							<text>核酸地点</text>
 						</navigator>
-					</view> -->
+					</view>
 
 					<view class="cu-item" @click="schoolCalendar()">
 						<navigator class="funcBtn" url="" v-if="isShowStudent">

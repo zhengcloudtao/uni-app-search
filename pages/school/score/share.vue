@@ -4,8 +4,8 @@
 			<block slot="backText">返回</block>
 			<block slot="content">分享成绩</block>
 		</cu-custom>
-		<view :class="isDark?'dark':''">
-			<view class="padding flex flex-direction" style="margin-top: 200rpx;">
+		<view :class="isDark?'dark':'bg-white'">
+			<view class="padding flex flex-direction" style="padding-top: 200rpx;">
 				<button class="cu-btn bg-blue margin-top lg " open-type="share"
 					style="margin-top: 150rpx;height:100rpx">分享给好友我的成绩</button>
 				<button class="cu-btn bg-grey margin-top lg" style="margin-top: 150rpx;height:100rpx"
@@ -13,9 +13,31 @@
 				<button class="cu-btn bg-red margin-top lg" style="margin-top: 150rpx;height:100rpx"
 					@click="myShare">我分享的</button>
 			</view>
+			<view class="padding flex flex-wrap " :class="isDark?'dark':'bg-white'">
 
+				<button class="cu-btn round line margin-left-xl margin-top-xl" @click="showModal()" style="margin-left: 10rpx;"><text
+						class="text-right" :class="isDark?'darkIn':''">使用说明</text></button>
+			</view>
 		</view>
 
+		<view class="cu-modal" :class="modalName=='DialogModal'?'show':''">
+			<view class="cu-dialog">
+				<view class="cu-bar  justify-end " :class="isDark?'dark':'bg-white'">
+					<view class="content">使用说明</view>
+					<view class="action" @tap="hideModal">
+						<text class="cuIcon-close text-red"></text>
+					</view>
+				</view>
+				<view class="padding-xl" :class="isDark?'darkIn':'bg-white'">
+					该功能为成绩分享，可以分享给好友、群，该成绩只分享【我的成绩】里的信息，分享后可以在【我分享的】里面取消分享！
+				</view>
+				<view class="cu-bar justify-end" :class="isDark?'dark':''">
+					<view class="action">
+						<button class="cu-btn bg-green margin-left" @tap="hideModal">确定</button>
+					</view>
+				</view>
+			</view>
+		</view>
 
 	</view>
 </template>
@@ -26,12 +48,13 @@
 		data() {
 			return {
 				isDark: this.isDark,
+				modalName: null
 			}
 		},
 		onShareAppMessage(res) { //发送给朋友
 
 			let _this = this
-			var key = _this.get_random_str(15);
+			var key = _this.get_random_str(25);
 			var form = {
 				key: key
 			}
@@ -44,7 +67,7 @@
 					})
 				} else {
 					uni.showToast({
-						title: '出错了，分享失败，可以再分享试试！'
+						title: '出错了！'
 					})
 				}
 				//这里只会在接口是成功状态返回
@@ -71,8 +94,18 @@
 		},
 		onShow() {
 			let _this = this
+			if (_this.$store.state.scoreShareTip == null) {
+				_this.$store.commit("scoreShareTip", "1")
+				_this.modalName = 'DialogModal'
+			}
 		},
 		methods: {
+			showModal() {
+				this.modalName = 'DialogModal'
+			},
+			hideModal(e) {
+				this.modalName = null
+			},
 			get_random_str(number) {
 				var x = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
 				let str = ''

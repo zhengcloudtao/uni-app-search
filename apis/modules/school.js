@@ -69,7 +69,7 @@ export async function scoreReceiveInfo(params) {
 	return res
 }
 export async function scoreShareInfo(params) {
-	let res = await api.get(school + '/score/Share/info', params, true);
+	let res = await api.get(school + '/score/share/info', params, true);
 	return res
 }
 export default {

@@ -50,17 +50,20 @@
 				</view>
 				<view class=" margin padding" v-for="(val,index) in totalList" :key="index"
 					:class="isDark?'darkIn':'bg-white'">
-					<view>
-						<span style="width:110rpx;">{{index+1}}</span>
-						<span style="margin-left: 50rpx;">课程名：{{val.name}}</span>
-						<view style="margin-top: 20rpx;margin-left: 65rpx;">
-							地点：{{val.place}}
-						</view>
-						<view style="margin-top: 20rpx;margin-left: 65rpx;">
-							老师：{{val.teacher}}
-						</view>
-						<view style="margin-top: 20rpx;margin-left: 65rpx;">
-							时间：{{val.examTime}}
+					<view style="display: flex;">
+
+						<view style="width:10rpx;">{{index+1}}</view>
+						<view>
+							<span style="margin-left: 65rpx;">课程名：{{val.name}}</span>
+							<view style="margin-top: 20rpx;margin-left: 65rpx;">
+								地点：{{val.place}}
+							</view>
+							<view style="margin-top: 20rpx;margin-left: 65rpx;">
+								老师：{{val.teacher}}
+							</view>
+							<view style="margin-top: 20rpx;margin-left: 65rpx;">
+								时间：{{val.examTime}}
+							</view>
 						</view>
 					</view>
 				</view>
@@ -70,7 +73,9 @@
 				</view>
 			</view>
 		</view>
-	</view>
+		<zmm-watermark>
+
+		</zmm-watermark>
 	</view>
 </template>
 <script>
@@ -83,7 +88,6 @@
 				total: null,
 				num: null,
 				showEmptyIcon: false,
-				totalXF: 0,
 				isDark: this.isDark
 
 
@@ -111,7 +115,7 @@
 
 			},
 			/**
-			 * @description  请求成绩数据
+			 * @description  请求数据
 			 */
 			refreshInfo: function() {
 				let _this = this

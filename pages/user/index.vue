@@ -158,6 +158,13 @@
 								<text>下载地址</text>
 							</navigator>
 						</view>
+						<view class="cu-item" @click="use()">
+							<navigator class="funcBtn" url="">
+								<view class="cuIcon-appreciate text-red">
+								</view>
+								<text>使用说明</text>
+							</navigator>
+						</view>
 						<view class="cu-item">
 							<navigator class="funcBtn" url="/pages/user/about">
 								<view class="cuIcon-my text-gray">
@@ -224,7 +231,20 @@
 						uni.showToast({
 							icon: 'none',
 							title: '网页地址已经复制，请自行到浏览器粘贴！',
-							
+
+						});
+					}
+				});
+			},
+			use() {
+				uni.setClipboardData({
+					data: 'https://www.bilibili.com/video/BV1UZ4y147HV',
+					showToast: false,
+					success: function() {
+						uni.showToast({
+							icon: 'none',
+							title: '网页地址已经复制，请自行到浏览器粘贴！',
+
 						});
 					}
 				});

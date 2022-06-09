@@ -31,7 +31,7 @@
 				</view>
 
 			</view>
-			<view>
+		<!-- 	<view>
 				<view style="height: 20rpx;"></view>
 				<view style="display: flex;padding-bottom: 20rpx;" class="settingView">
 					<p class="settingViewFont">公告栏推送设置</p>
@@ -43,7 +43,7 @@
 					<image src="../../static/my/right.png" class="rightIcon"></image>
 				</view>
 
-			</view>
+			</view> -->
 		</view>
 	</view>
 </template>
