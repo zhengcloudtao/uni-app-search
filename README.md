@@ -4,9 +4,8 @@
 1. 一个本来做个情侣课表看看，慢慢的做成毕设。一开始是以SpringBoot做为后端，以方便部署包小的主要想法，但单一的SpringBoot的项目不具备挑战性。
 2. 基于SpringCloud的分布式校园助手系统，集成了`SpringCloud、Nacos、Nginx、Gateway、Sentiel、OpenFeign、seata、Hadoop、Redis、Mysql、MongoDB、uni-app、vue、Echarts、Element、ColorUI、Flask`。
 3. 随着学校的发展，校园生活就成为重中之重。所以有个良好的校园平台，让人们了解校园资讯。本文主要讲述的是本人在制作校园助手系统，对校园助手系统进行了分析。校园助手系统是基于SpringCloud和uni-app为基础，对校园助手进行系统管理，使其信息查询更加快速、方便、简洁地传达给学生，让学生更加方便浏览、了解校园的相关信息资料。
-
-gitee[https://gitee.com/zhengcloudtao/uni-app-search]
-github[https://github.com/zhengcloudtao/uni-app-search]
+4. gitee[https://gitee.com/zhengcloudtao/uni-app-search]
+5. github[https://github.com/zhengcloudtao/uni-app-search]
 ![输入图片说明](image2.png)
 
 ![输入图片说明](image3.png)
