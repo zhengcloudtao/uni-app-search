@@ -8,11 +8,11 @@
 5. github[https://github.com/zhengcloudtao/uni-app-search]
 
 
-![输入图片说明](image2.png)
+![输入图片说明](https://gitee.com/zhengcloudtao/uni-app-search/raw/master/image2.png)
 
-![输入图片说明](image3.png)
+![输入图片说明](https://gitee.com/zhengcloudtao/uni-app-search/raw/master/image3.png)
 
-![系统架构图](image1.png)
+![系统架构图](https://gitee.com/zhengcloudtao/uni-app-search/raw/master/image1.png)
 
 ## 二、包含的开源插件
 
