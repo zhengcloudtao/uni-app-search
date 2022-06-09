@@ -42,7 +42,7 @@
 							<view style="margin-top: 20rpx;margin-left: 65rpx;">
 								分享时间：{{val.addTime}}
 							</view>
-							<view style="margin-top: 20rpx;margin-left: 65rpx;color:red" v-if="val.deleteTime!=null">
+							<view style="margin-top: 20rpx;margin-left: 65rpx;color:#A52A2A" v-if="val.deleteTime!=null">
 								已取消
 							</view>
 							<button class="cu-btn bg-red  " style="margin-left:65rpx;margin-top:20rpx"
