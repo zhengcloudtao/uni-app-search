@@ -58,7 +58,7 @@
 				<view class="cu-item">
 					<view class="content" :class="isDark?'darkIn':'bg-gray'">
 						<view :class="isDark?'text-white':'text-black'">
-							核酸地点
+							核核地点
 						</view>
 						<view class="cu-capsule radius margin-top">
 							<view class="cu-tag bg-blue">来自</view>

@@ -2,14 +2,14 @@
 	<view :class="isDark?'darkBg':''">
 		<cu-custom :bgColor="isDark?'bg-black':'bg-pink'" isBack="true">
 			<block slot="backText">返回</block>
-			<block slot="content">核酸地点</block>
+			<block slot="content">核核地点</block>
 		</cu-custom>
 
 		<view :class="isDark?'dark':''">
 
 			<view class="cu-bar bg-white solid-bottom" style="font-weight:bold" :class="isDark?'dark':'bg-white'">
 				<view class="action">
-					<text class="cuIcon-titles text-pink"></text>核酸地点查询
+					<text class="cuIcon-titles text-pink"></text>核核地点查询
 					<text class="cuIcon-search"></text>
 				</view>
 			</view>
@@ -49,8 +49,9 @@
 			</view>
 
 			<view class="padding flex flex-wrap " :class="isDark?'dark':'bg-white'">
-				<text class="padding">数据仅供参考，以实际情况和官方通知为准，核酸检测点如出现与以上数据不准可点击“我要反馈”</text>
-				<text class="margin-top-sm padding">疫情防控、人人有责，每多一次准确的反馈，就可以让大家就能更好的选择核酸地点，今天你帮助别人，别人明天就帮助你。</text>
+				<text class="padding">数据仅供参考，以实际情况和官方通知为准，如出现与以上数据不准可点击“我要反馈”</text>
+				<!-- <text class="margin-top-sm padding">疫情防控、人人有责，每多一次准确的反馈，就可以让大家就能更好的选择核酸地点，今天你帮助别人，别人明天就帮助你。</text>
+				 -->
 				<button class="cu-btn round line margin-top" @click="refresh()">
 					<text class="cuIcon-refresh text-right" :class="isDark?'dark':''"></text>
 				</button>

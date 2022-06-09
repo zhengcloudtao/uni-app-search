@@ -61,7 +61,7 @@
 				</view>
 
 
-				<view class="padding" style="border-radius: 30rpx;" v-if="client=='WECHAT'">
+				<!-- <view class="padding" style="border-radius: 30rpx;" v-if="client=='WECHAT'">
 					<view class="cu-bar solid-bottom"
 						style="border-top-left-radius: 30rpx;border-top-right-radius: 30rpx;"
 						:class="isDark?'darkIn':'bg-white'">
@@ -101,7 +101,7 @@
 					</view>
 
 				</view>
-
+ -->
 				<view class="padding" style="border-radius: 30rpx;">
 					<view class="cu-bar  solid-bottom"
 						style="border-top-left-radius: 30rpx;border-top-right-radius: 30rpx;"
@@ -164,6 +164,12 @@
 								</view>
 								<text>使用说明</text>
 							</navigator>
+						</view>
+						<view class="cu-item ">
+							<button open-type="contact" style="background-color:transparent;margin-top: -40rpx;">
+								<view class="cuIcon-dianhua text-orange"></view>
+								<text :class="isDark?'text-white':'text-gray'" style="margin-top: -20rpx;">联系客服</text>
+							</button>
 						</view>
 						<view class="cu-item">
 							<navigator class="funcBtn" url="/pages/user/about">

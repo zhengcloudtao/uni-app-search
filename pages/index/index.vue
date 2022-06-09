@@ -257,7 +257,7 @@
 						<navigator class="funcBtn" url="/pages/custom/virus/index" v-if="isShowStudent">
 							<view class="cuIcon-safe text-pink">
 							</view>
-							<text>核酸地点</text>
+							<text>核核地点</text>
 						</navigator>
 					</view>
 
@@ -268,13 +268,13 @@
 							<text>校园日历</text>
 						</navigator>
 					</view>
-					<view class="cu-item" @click="map()">
+					<!-- <view class="cu-item" @click="map()">
 						<navigator class="funcBtn" url="" v-if="isShowStudent">
 							<view class="cuIcon-pic text-olive">
 							</view>
 							<text>校园地图</text>
 						</navigator>
-					</view>
+					</view> -->
 
 
 				</view>
