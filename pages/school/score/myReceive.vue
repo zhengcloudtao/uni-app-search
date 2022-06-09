@@ -35,12 +35,12 @@
 					<view style="display: flex;">
 						<view style="width:10rpx;">{{index+1}}</view>
 						<view>
-							<span style="margin-left: 47rpx;">学号：{{val.username}}</span>
+							<view style="margin-left: 65rpx;">学号：{{val.username}}</view>
 							<view style="margin-top: 20rpx;margin-left: 65rpx;">
 								密钥：{{val.shareKey}}
 							</view>
 							<view style="margin-top: 20rpx;margin-left: 65rpx;">
-								分享时间：{{val.addTime}}
+								收到时间：{{val.addTime}}
 							</view>
 							<view style="margin-top: 20rpx;margin-left: 65rpx;color:#A52A2A" v-if="val.deleteTime!=null">
 								已取消
