@@ -18,6 +18,9 @@
 			</view>
 			<!-- <button  v-show="pay" @click="getH5Url()" class="smallButton" style="margin-top: 60rpx;">向开发者赞助</button>
  -->
+			<zmm-watermark>
+
+			</zmm-watermark>
 		</view>
 	</view>
 </template>

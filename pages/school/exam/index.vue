@@ -98,7 +98,9 @@
 		},
 		onShow() {
 			let _this = this
-			_this.totalList = _this.$store.state.userExam
+			if ( _this.$store.state.userExam.length != undefined) {
+				_this.totalList = _this.$store.state.userExam
+			}
 			_this.setData()
 			_this.refreshInfo()
 

@@ -90,7 +90,9 @@
 		},
 		onShow() {
 			let _this = this
-			_this.totalList = _this.$store.state.userScoreEducation
+			if (_this.$store.state.userScoreEducation.length != undefined) {
+				_this.totalList = _this.$store.state.userScoreEducation
+			}
 			_this.setData()
 			_this.refreshInfo()
 
@@ -113,18 +115,19 @@
 			},
 			setData() {
 				let _this = this
-
-				if (_this.totalList.length <= 0 | _this.totalList.length == undefined) {
-					_this.showEmptyIcon = true
-				} else {
-					_this.showEmptyIcon = false
-				}
 				var total = 0
 				for (var i = 0; i < _this.totalList.length; i++) {
 
 					total += parseFloat(_this.totalList[i].educationScore)
 				}
-				_this.avgScore = (total / _this.totalList.length).toFixed(0)
+				if (_this.totalList.length <= 0 | _this.totalList.length == undefined) {
+					_this.showEmptyIcon = true
+				} else {
+					_this.avgScore = (total / _this.totalList.length).toFixed(0)
+					_this.showEmptyIcon = false
+				}
+
+
 
 			},
 			/**

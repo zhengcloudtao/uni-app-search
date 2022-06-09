@@ -93,7 +93,9 @@
 		},
 		onShow() {
 			let _this = this
-			_this.totalList = _this.$store.state.userNoScore
+			if ( _this.$store.state.userNoScore.length != undefined) {
+				_this.totalList = _this.$store.state.userNoScore
+			}
 			_this.setData()
 			_this.refreshInfo()
 

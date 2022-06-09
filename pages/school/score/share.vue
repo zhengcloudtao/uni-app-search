@@ -5,7 +5,7 @@
 			<block slot="content">分享成绩</block>
 		</cu-custom>
 		<view :class="isDark?'dark':'bg-white'">
-			<view class="padding flex flex-direction" style="padding-top: 200rpx;">
+			<view class="padding flex flex-direction" style="padding-top: 50rpx;">
 				<button class="cu-btn bg-blue margin-top lg " open-type="share"
 					style="margin-top: 150rpx;height:100rpx">分享给好友我的成绩</button>
 				<button class="cu-btn bg-grey margin-top lg" style="margin-top: 150rpx;height:100rpx"

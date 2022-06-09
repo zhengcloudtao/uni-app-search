@@ -66,8 +66,11 @@
 			</view>
 			<view class="cu-tabbar-height"></view>
 
-		
+
 		</view>
+		<zmm-watermark>
+
+		</zmm-watermark>
 	</view>
 </template>
 <script>
@@ -79,7 +82,7 @@
 				num: 0,
 				isDark: this.isDark,
 				showEmptyIcon: false,
-				client:this.client
+				client: this.client
 			}
 		},
 		onLoad() {
@@ -137,31 +140,31 @@
 							var days = date.getDay();
 							var nowNum = curHours * 100 + curMinutes
 							//console.log(nowNum)
-							
+
 							for (var i = 0; i < response.data.length; i++) {
 								var key = 0
 								//console.log(response.data[i].time)
 								var arr = response.data[i].time.split(" ")
 								for (var j = 0; j < arr.length; j++) {
 									var arrSon = arr[j].split("-")
-									if(arrSon.length==2){
+									if (arrSon.length == 2) {
 										var start = parseInt((arrSon[0]).replace(':', ''));
 										var end = parseInt((arrSon[1]).replace(':', ''));
 										//console.log(start)
 										//console.log(end)
-										if(start<=nowNum&&nowNum<=end){
-											key=1;
+										if (start <= nowNum && nowNum <= end) {
+											key = 1;
 										}
 									}
 								}
 								//console.log("key:"+key)
-								if(key==0){
-									response.data[i].state=0
+								if (key == 0) {
+									response.data[i].state = 0
 								}
 								//console.log(arr)
 							}
-							
-							
+
+
 							_this.list = response.data
 							uni.showToast({
 								icon: 'none',
@@ -175,7 +178,7 @@
 								duration: 2000
 							});
 						}
-						
+
 
 
 

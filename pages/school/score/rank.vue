@@ -103,7 +103,9 @@
 		},
 		onShow() {
 			let _this = this
-			_this.totalList = _this.$store.state.userScoreRank
+			if (_this.$store.state.userScoreRank.length != undefined) {
+				_this.totalList = _this.$store.state.userScoreRank
+			}
 			_this.setData()
 			_this.refreshInfo()
 
@@ -117,11 +119,11 @@
 
 					total += parseFloat(_this.totalList[i].majorRank)
 				}
-				_this.avgMajor = (total / _this.totalList.length).toFixed(0)
 				if (_this.totalList.length <= 0 | _this.totalList.length == undefined) {
 					_this.showEmptyIcon = true
 				} else {
 					_this.showEmptyIcon = false
+					_this.avgMajor = (total / _this.totalList.length).toFixed(0)
 				}
 			},
 			/**

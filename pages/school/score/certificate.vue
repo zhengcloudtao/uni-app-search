@@ -83,7 +83,11 @@
 		},
 		onShow() {
 			let _this = this
-			_this.totalList = _this.$store.state.userCertificate
+			
+			if (_this.$store.state.userCertificate.length != undefined) {
+				_this.totalList = _this.$store.state.userCertificate
+			}
+
 			_this.setData()
 			_this.refreshInfo()
 
