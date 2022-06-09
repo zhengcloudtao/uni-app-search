@@ -15,8 +15,9 @@
 			</view>
 			<view class="padding flex flex-wrap " :class="isDark?'dark':'bg-white'">
 
-				<button class="cu-btn round line margin-left-xl margin-top-xl" @click="showModal()" style="margin-left: 10rpx;"><text
-						class="text-right" :class="isDark?'darkIn':''">使用说明</text></button>
+				<button class="cu-btn round line margin-left-xl margin-top-xl" @click="showModal()"
+					style="margin-left: 10rpx;"><text class="text-right"
+						:class="isDark?'darkIn':''">使用说明</text></button>
 			</view>
 		</view>
 
@@ -29,7 +30,7 @@
 					</view>
 				</view>
 				<view class="padding-xl" :class="isDark?'darkIn':'bg-white'">
-					该功能为成绩分享，可以分享给好友、群，该成绩只分享【我的成绩】里的信息，分享后可以在【我分享的】里面取消分享！
+					该功能为成绩分享，可以分享给好友、群，该成绩只分享[我的成绩]里的信息，分享后可以在[我分享的]里面取消分享！
 				</view>
 				<view class="cu-bar justify-end" :class="isDark?'dark':''">
 					<view class="action">
@@ -66,8 +67,10 @@
 						showCancel: false
 					})
 				} else {
-					uni.showToast({
-						title: '出错了！'
+					uni.showModal({
+						title: '提示',
+						content: response.msg,
+						showCancel: false
 					})
 				}
 				//这里只会在接口是成功状态返回
@@ -88,9 +91,32 @@
 		},
 		onLoad(option) {
 			console.log(option.key)
-			uni.showToast({
-				title: option.key
-			})
+			var key = option.key
+			// uni.showToast({
+			// 	title: option.key
+			// })
+			var form = {
+				key: option.key
+			}
+			if (option.key) {
+				this.$schoolApi.scoreReceive(form).then(response => {
+					if (response.status == 0) {
+						uni.showModal({
+							title: '提示',
+							content: response.msg,
+							showCancel: false
+						})
+					} else {
+						uni.showModal({
+							title: '提示',
+							content: response.msg,
+							showCancel: false
+						})
+					}
+					//这里只会在接口是成功状态返回
+				})
+			}
+
 		},
 		onShow() {
 			let _this = this
